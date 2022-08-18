@@ -1,0 +1,18 @@
+{
+	"name": "BinarySource",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorageSource",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "popcorn.txt",
+				"container": "popcorn"
+			}
+		}
+	}
+}
