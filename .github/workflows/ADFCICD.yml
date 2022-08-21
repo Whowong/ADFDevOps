@@ -65,6 +65,7 @@ jobs:
       - name: Deploy resources to UAT
         uses: Azure/data-factory-deploy-action@v1.2.0
         with:
-          resourceGroupName: ADF_DevOps_Demo
+          resourceGroupName: ${{ env.ResourceGroup }}
           dataFactoryName: ADF-AHCSADemo-QA
           armTemplateFile: ARMTemplateForFactory.json
+          additionalParameters: 'AzureBlobStorageDestination_connectionString=${{ secrets.DEST_CONN_STRING }} AzureBlobStorageSource_connectionString=${{ secrets.SOURCE_CONN_STRING }}'
