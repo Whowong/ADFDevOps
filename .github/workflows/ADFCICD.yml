@@ -64,6 +64,6 @@ jobs:
       - name: Deploy resources to UAT
         uses: Azure/data-factory-deploy-action@v1.2.0
         with:
-          resourceGroupName: $ResourceGroup
+          resourceGroupName: ADF_DevOps_Demo
           dataFactoryName: ADF-AHCSADemo-QA
           armTemplateFile: ARMTemplateForFactory.json
