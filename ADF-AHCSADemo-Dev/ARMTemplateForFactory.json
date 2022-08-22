@@ -27,7 +27,7 @@
 			"properties": {
 				"activities": [
 					{
-						"name": "Copy Popcorn Data1",
+						"name": "Copy Popcorn Data2",
 						"type": "Copy",
 						"dependsOn": [],
 						"policy": {
