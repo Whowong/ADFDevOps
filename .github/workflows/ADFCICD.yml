@@ -38,10 +38,10 @@ jobs:
           name: adf-artifact
           path: ADF-AHCSADemo-Dev/
           
-  UAT_Deploy:
+  QA_Deploy:
     runs-on: ubuntu-latest
     needs: build
-    environment: UAT
+    environment: QA
     steps:
     
       # Downloading the artifact we uploaded earlier
