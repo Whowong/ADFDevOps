@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy Popcorn Data4",
+				"name": "Copy Popcorn DataDemo4",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
