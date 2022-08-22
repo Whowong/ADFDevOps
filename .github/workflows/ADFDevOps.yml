@@ -72,7 +72,7 @@ jobs:
           
   PROD_Deploy:
     runs-on: ubuntu-latest
-    needs: UAT_Deploy
+    needs: QA_Deploy
     environment: Production
     steps:
     
