@@ -62,7 +62,7 @@ jobs:
           enable-AzPSSession: true 
           
       # Deploying to UAT environment
-      - name: Deploy resources to UAT
+      - name: Deploy resources to QA
         uses: Azure/data-factory-deploy-action@v1.2.0
         with:
           resourceGroupName: ${{ env.ResourceGroup }}
