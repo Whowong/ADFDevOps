@@ -16,9 +16,9 @@
 			"recurrence": {
 				"frequency": "Minute",
 				"interval": 15,
-				"startTime": "2022-08-25T23:16:00Z",
-				"endTime": "2022-09-01T00:16:00Z",
-				"timeZone": "UTC"
+				"startTime": "2022-08-25T16:35:00",
+				"endTime": "2022-09-01T00:16:00",
+				"timeZone": "Pacific Standard Time"
 			}
 		}
 	}
