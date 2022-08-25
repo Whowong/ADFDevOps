@@ -93,7 +93,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/PopcornPipeline')]",
+			"name": "[concat(parameters('factoryName'), '/PopcornPipelineDemo2')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
