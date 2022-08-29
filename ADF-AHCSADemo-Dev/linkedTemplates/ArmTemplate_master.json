@@ -7,13 +7,13 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "ADF-AHCSADemo-Dev"
 		},
-		"AzureBlobStorageDestination_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorageDestination'"
+		"AzureBlobStorageDestination_properties_typeProperties_serviceEndpoint": {
+			"type": "string",
+			"defaultValue": "https://adfahcsademodestination.blob.core.windows.net/"
 		},
-		"AzureBlobStorageSource_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorageSource'"
+		"AzureBlobStorageSource_properties_typeProperties_serviceEndpoint": {
+			"type": "string",
+			"defaultValue": "https://adfahcsademosource.blob.core.windows.net/"
 		},
 		"containerUri": {
 			"type": "string",
@@ -42,11 +42,11 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
-					"AzureBlobStorageDestination_connectionString": {
-						"value": "[parameters('AzureBlobStorageDestination_connectionString')]"
+					"AzureBlobStorageDestination_properties_typeProperties_serviceEndpoint": {
+						"value": "[parameters('AzureBlobStorageDestination_properties_typeProperties_serviceEndpoint')]"
 					},
-					"AzureBlobStorageSource_connectionString": {
-						"value": "[parameters('AzureBlobStorageSource_connectionString')]"
+					"AzureBlobStorageSource_properties_typeProperties_serviceEndpoint": {
+						"value": "[parameters('AzureBlobStorageSource_properties_typeProperties_serviceEndpoint')]"
 					}
 				}
 			},

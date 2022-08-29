@@ -5,11 +5,11 @@
 		"factoryName": {
 			"value": "ADF-AHCSADemo-Dev"
 		},
-		"AzureBlobStorageDestination_connectionString": {
-			"value": ""
+		"AzureBlobStorageDestination_properties_typeProperties_serviceEndpoint": {
+			"value": "https://adfahcsademodestination.blob.core.windows.net/"
 		},
-		"AzureBlobStorageSource_connectionString": {
-			"value": ""
+		"AzureBlobStorageSource_properties_typeProperties_serviceEndpoint": {
+			"value": "https://adfahcsademosource.blob.core.windows.net/"
 		},
 		"containerUri": {
 			"value": ""

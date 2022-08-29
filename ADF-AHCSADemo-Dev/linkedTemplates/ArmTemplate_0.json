@@ -7,13 +7,13 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "ADF-AHCSADemo-Dev"
 		},
-		"AzureBlobStorageDestination_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorageDestination'"
+		"AzureBlobStorageDestination_properties_typeProperties_serviceEndpoint": {
+			"type": "string",
+			"defaultValue": "https://adfahcsademodestination.blob.core.windows.net/"
 		},
-		"AzureBlobStorageSource_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorageSource'"
+		"AzureBlobStorageSource_properties_typeProperties_serviceEndpoint": {
+			"type": "string",
+			"defaultValue": "https://adfahcsademosource.blob.core.windows.net/"
 		}
 	},
 	"variables": {
@@ -28,7 +28,8 @@
 				"annotations": [],
 				"type": "AzureBlobStorage",
 				"typeProperties": {
-					"connectionString": "[parameters('AzureBlobStorageDestination_connectionString')]"
+					"serviceEndpoint": "[parameters('AzureBlobStorageDestination_properties_typeProperties_serviceEndpoint')]",
+					"accountKind": "StorageV2"
 				}
 			},
 			"dependsOn": []
@@ -42,7 +43,29 @@
 				"annotations": [],
 				"type": "AzureBlobStorage",
 				"typeProperties": {
-					"connectionString": "[parameters('AzureBlobStorageSource_connectionString')]"
+					"serviceEndpoint": "[parameters('AzureBlobStorageSource_properties_typeProperties_serviceEndpoint')]",
+					"accountKind": "StorageV2"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/trigger1')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Stopped",
+				"pipelines": [],
+				"type": "ScheduleTrigger",
+				"typeProperties": {
+					"recurrence": {
+						"frequency": "Minute",
+						"interval": 15,
+						"startTime": "2022-08-25T16:35:00",
+						"endTime": "2022-09-01T00:16:00",
+						"timeZone": "Pacific Standard Time"
+					}
 				}
 			},
 			"dependsOn": []
@@ -154,37 +177,6 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/BinarySource')]",
 				"[concat(variables('factoryId'), '/datasets/BinaryDestination')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/trigger1')]",
-			"type": "Microsoft.DataFactory/factories/triggers",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"runtimeState": "Started",
-				"pipelines": [
-					{
-						"pipelineReference": {
-							"referenceName": "PopcornPipelineDemo2",
-							"type": "PipelineReference"
-						},
-						"parameters": {}
-					}
-				],
-				"type": "ScheduleTrigger",
-				"typeProperties": {
-					"recurrence": {
-						"frequency": "Minute",
-						"interval": 15,
-						"startTime": "2022-08-25T16:35:00",
-						"endTime": "2022-09-01T00:16:00",
-						"timeZone": "Pacific Standard Time"
-					}
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/pipelines/PopcornPipelineDemo2')]"
 			]
 		}
 	]
