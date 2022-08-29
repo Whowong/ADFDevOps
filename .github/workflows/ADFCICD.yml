@@ -62,13 +62,12 @@ jobs:
           enable-AzPSSession: true 
           
       # Deploying to UAT environment
-      - name: Deploy resources to UAT
+      - name: Deploy resources to QA
         uses: Azure/data-factory-deploy-action@v1.2.0
         with:
           resourceGroupName: ${{ env.ResourceGroup }}
           dataFactoryName: ADF-AHCSADemo-QA
           armTemplateFile: ARMTemplateForFactory.json
-          additionalParameters: 'AzureBlobStorageDestination_connectionString=${{ secrets.DEST_CONN_STRING }} AzureBlobStorageSource_connectionString=${{ secrets.SOURCE_CONN_STRING }}'
           
   PROD_Deploy:
     runs-on: ubuntu-latest
@@ -99,4 +98,3 @@ jobs:
           resourceGroupName: ${{ env.ResourceGroup }}
           dataFactoryName: ADF-AHCSADemo-Prod
           armTemplateFile: ARMTemplateForFactory.json
-          additionalParameters: 'AzureBlobStorageDestination_connectionString=${{ secrets.DEST_CONN_STRING }} AzureBlobStorageSource_connectionString=${{ secrets.SOURCE_CONN_STRING }}'
