@@ -15,6 +15,14 @@
 			"type": "string",
 			"defaultValue": "https://adfahcsademosource.blob.core.windows.net/"
 		},
+		"AzureKeyVault_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://ADFKVAHCSADev.vault.azure.net/"
+		},
+		"default_properties_Environment_value": {
+			"type": "string",
+			"defaultValue": "dev"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -42,11 +50,17 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"default_properties_Environment_value": {
+						"value": "[parameters('default_properties_Environment_value')]"
+					},
 					"AzureBlobStorageDestination_properties_typeProperties_serviceEndpoint": {
 						"value": "[parameters('AzureBlobStorageDestination_properties_typeProperties_serviceEndpoint')]"
 					},
 					"AzureBlobStorageSource_properties_typeProperties_serviceEndpoint": {
 						"value": "[parameters('AzureBlobStorageSource_properties_typeProperties_serviceEndpoint')]"
+					},
+					"AzureKeyVault_properties_typeProperties_baseUrl": {
+						"value": "[parameters('AzureKeyVault_properties_typeProperties_baseUrl')]"
 					}
 				}
 			},

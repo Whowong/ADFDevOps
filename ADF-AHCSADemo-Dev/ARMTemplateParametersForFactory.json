@@ -10,6 +10,12 @@
 		},
 		"AzureBlobStorageSource_properties_typeProperties_serviceEndpoint": {
 			"value": "https://adfahcsademosource.blob.core.windows.net/"
+		},
+		"AzureKeyVault_properties_typeProperties_baseUrl": {
+			"value": "https://ADFKVAHCSADev.vault.azure.net/"
+		},
+		"default_properties_Environment_value": {
+			"value": "dev"
 		}
 	}
 }
