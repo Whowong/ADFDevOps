@@ -37,7 +37,10 @@
 				"userProperties": [],
 				"typeProperties": {
 					"variableName": "KeyVaultSecretDemo",
-					"value": "@activity(\"Get Secret From KeyVault\").output.value"
+					"value": {
+						"value": "@activity('Get Secret From KeyVault').output.value",
+						"type": "Expression"
+					}
 				}
 			}
 		],
