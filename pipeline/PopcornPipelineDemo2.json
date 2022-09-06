@@ -47,6 +47,11 @@
 				]
 			}
 		],
+		"variables": {
+			"KeyVaultSecretDemo": {
+				"type": "String"
+			}
+		},
 		"annotations": []
 	}
 }
