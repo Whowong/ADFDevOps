@@ -16,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"url": {
-						"value": "@pipeline().globalParameters.Environment",
+						"value": "@variables('KeyVaultSecretDemo')",
 						"type": "Expression"
 					},
 					"method": "GET",
