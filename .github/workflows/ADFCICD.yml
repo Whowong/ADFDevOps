@@ -68,6 +68,7 @@ jobs:
           resourceGroupName: ${{ env.ResourceGroup }}
           dataFactoryName: ADF-AHCSADemo-Dev
           armTemplateFile: ARMTemplateForFactory.json
+          additionalParameters: 'AzureKeyVault_properties_typeProperties_baseUrl=${{ secrets.KeyVaultURL }}'
           
   QA_Deploy:
     runs-on: ubuntu-latest
@@ -98,6 +99,7 @@ jobs:
           resourceGroupName: ${{ env.ResourceGroup }}
           dataFactoryName: ADF-AHCSADemo-QA
           armTemplateFile: ARMTemplateForFactory.json
+          additionalParameters: 'AzureKeyVault_properties_typeProperties_baseUrl=${{ secrets.KeyVaultURL }}'
           
   PROD_Deploy:
     runs-on: ubuntu-latest
@@ -128,3 +130,4 @@ jobs:
           resourceGroupName: ${{ env.ResourceGroup }}
           dataFactoryName: ADF-AHCSADemo-Prod
           armTemplateFile: ARMTemplateForFactory.json
+          additionalParameters: 'AzureKeyVault_properties_typeProperties_baseUrl=${{ secrets.KeyVaultURL }}'
