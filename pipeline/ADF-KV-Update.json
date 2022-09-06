@@ -15,7 +15,10 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"url": "https://adfkvahcsadev.vault.azure.net/secrets/ADFDemo?api-version=7.0",
+					"url": {
+						"value": "https://adfkvahcsa@{pipeline().globalParameters.Environment}.vault.azure.net/secrets/ADFDemo?api-version=7.0",
+						"type": "Expression"
+					},
 					"method": "GET",
 					"authentication": {
 						"type": "MSI",
