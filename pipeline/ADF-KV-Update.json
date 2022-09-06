@@ -16,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"url": {
-						"value": "https://adfkvahcsa@{pipeline().globalParameters.Environment}.vault.azure.net/secrets/ADFDemo?api-version=7.0",
+						"value": "@pipeline().globalParameters.Environment",
 						"type": "Expression"
 					},
 					"method": "GET",
