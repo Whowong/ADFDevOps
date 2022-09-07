@@ -16,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"url": {
-						"value": "@pipeline().globalParameters.Environment",
+						"value": "\r\n\r\nhttps://adfkvahcsa@{pipeline().parameters.Environment}.vault.azure.net/secrets/ADFDemo?api-version=7.0",
 						"type": "Expression"
 					},
 					"method": "GET",
@@ -47,6 +47,12 @@
 				}
 			}
 		],
+		"parameters": {
+			"Environment": {
+				"type": "string",
+				"defaultValue": "Dev"
+			}
+		},
 		"variables": {
 			"KeyVaultSecretDemo": {
 				"type": "String"
