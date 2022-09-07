@@ -33,7 +33,7 @@ jobs:
         id: export
         uses: Azure/data-factory-export-action@v1.0.2
         with:
-          id: ${{ secret.ADFDevResourceID }}
+          id: ${{ secrets.ADFDevResourceID }}
         
       # Uploading our artifact from adf_publish branch
       - uses: actions/upload-artifact@v3
