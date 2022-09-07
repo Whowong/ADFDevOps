@@ -26,5 +26,5 @@ jobs:
       - name: Validate Data Factory resources
         uses: Azure/data-factory-validate-action@v1.1.5
         with:
-          id: ${{ secretsADFDevResourceID }}
+          id: ${{ secrets.ADFDevResourceID }}
           
