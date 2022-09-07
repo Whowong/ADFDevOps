@@ -48,7 +48,7 @@
 						"userProperties": [],
 						"typeProperties": {
 							"url": {
-								"value": "@variables('KeyVaultSecretDemo')",
+								"value": "@pipeline().parameters.Environment",
 								"type": "Expression"
 							},
 							"method": "GET",
@@ -83,6 +83,12 @@
 				"policy": {
 					"elapsedTimeMetric": {},
 					"cancelAfter": {}
+				},
+				"parameters": {
+					"Environment": {
+						"type": "string",
+						"defaultValue": "Dev"
+					}
 				},
 				"variables": {
 					"KeyVaultSecretDemo": {
