@@ -74,7 +74,7 @@ jobs:
           
   QA_Deploy:
     runs-on: ubuntu-latest
-    needs: Dev_Deploy
+    needs: build
     environment: QA
     steps:
     
