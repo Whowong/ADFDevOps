@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "popcorn.txt",
+				"fileName": "kernel.txt",
 				"container": "popcorn"
 			}
 		}
