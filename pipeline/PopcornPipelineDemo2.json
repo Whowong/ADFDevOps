@@ -64,7 +64,7 @@
 				}
 			},
 			{
-				"name": "Get Metadata1",
+				"name": "Get Binary Source Metadata",
 				"type": "GetMetadata",
 				"dependsOn": [
 					{
