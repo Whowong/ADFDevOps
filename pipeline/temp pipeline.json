@@ -1,0 +1,23 @@
+{
+	"name": "temp pipeline",
+	"properties": {
+		"activities": [
+			{
+				"name": "temp Append variable1",
+				"type": "AppendVariable",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "temp variable",
+					"value": "temp"
+				}
+			}
+		],
+		"variables": {
+			"temp variable": {
+				"type": "Array"
+			}
+		},
+		"annotations": []
+	}
+}
