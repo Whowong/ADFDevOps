@@ -45,11 +45,31 @@
 						"type": "DatasetReference"
 					}
 				]
+			},
+			{
+				"name": "Append variable1",
+				"type": "AppendVariable",
+				"dependsOn": [
+					{
+						"activity": "Popcorn DataDemo",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "Customer A New Variable",
+					"value": "Customer A"
+				}
 			}
 		],
 		"variables": {
 			"KeyVaultSecretDemo": {
 				"type": "String"
+			},
+			"Customer A New Variable": {
+				"type": "Array"
 			}
 		},
 		"annotations": []
