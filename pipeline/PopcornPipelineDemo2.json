@@ -84,7 +84,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataset": {
-						"referenceName": "BinaryDestination",
+						"referenceName": "BinarySource",
 						"type": "DatasetReference"
 					},
 					"fieldList": [
