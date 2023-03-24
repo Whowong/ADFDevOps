@@ -71,13 +71,20 @@ jobs:
           enable-AzPSSession: true 
           
       # Deploying to UAT environment
-      - name: Deploy resources to QA
-        uses: Azure/data-factory-deploy-action@v1.2.0
+      - name: Run ARM deploy
+        uses: azure/arm-deploy@v1
         with:
           resourceGroupName: ${{ env.ResourceGroup }}
-          dataFactoryName: ADF-AHCSADemo-QA
-          armTemplateFile: ARMTemplateForFactory.json
-          additionalParameters: 'AzureKeyVault_properties_typeProperties_baseUrl=${{ secrets.KeyVaultURL }} default_properties_Environment_value=QA'
+          template: ARMTemplateForFactory.json
+          parameters: factoryName=ADF-AHCSADemo-QA AzureKeyVault_properties_typeProperties_baseUrl=${{ secrets.KeyVaultURL }} default_properties_Environment_value=QA
+      
+      #- name: Deploy resources to QA
+      #  uses: Azure/data-factory-deploy-action@v1.2.0
+      #  with:
+      #    resourceGroupName: ${{ env.ResourceGroup }}
+      #    dataFactoryName: ADF-AHCSADemo-QA
+      #    armTemplateFile: ARMTemplateForFactory.json
+      #    additionalParameters: 'AzureKeyVault_properties_typeProperties_baseUrl=${{ secrets.KeyVaultURL }} default_properties_Environment_value=QA'
           
   PROD_Deploy:
     runs-on: ubuntu-latest
