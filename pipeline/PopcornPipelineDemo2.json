@@ -86,8 +86,7 @@
 		],
 		"parameters": {
 			"test": {
-				"type": "string",
-				"defaultValue": "test"
+				"type": "string"
 			}
 		},
 		"variables": {
