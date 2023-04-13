@@ -75,6 +75,7 @@
 					],
 					"storeSettings": {
 						"type": "AzureBlobStorageReadSettings",
+						"recursive": true,
 						"enablePartitionDiscovery": false
 					},
 					"formatSettings": {
@@ -83,6 +84,12 @@
 				}
 			}
 		],
+		"parameters": {
+			"test": {
+				"type": "string",
+				"defaultValue": "test"
+			}
+		},
 		"variables": {
 			"KeyVaultSecretDemo": {
 				"type": "String"
